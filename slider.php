@@ -1,23 +1,50 @@
 <div class="div-slider">
     <div class="img-slider">
         <?php
+        // Cas 1 : Slides générales (avec 'img', 'title', etc.)
+        if (isset($slides[0])) {
 
-        foreach ($slides as $index => $slide) {
-            echo '<div class="slide' . ($index === 0 ? ' active' : '') . '">';
-            echo '<img src="' . $slide['img'] . '" alt="' . $slide['alt'] . '">';
-            echo '<div class="info">';
-            echo '<h2>' . $slide['title'] . '</h2>';
-            echo '<p>' . $slide['desc'] . '</p>';
-            if (isset($slide['link'])) {
-                echo '<a href="' . $slide['link'] . '" style="color:white; margin-left: 10px;">EN SAVOIR PLUS</a>';
+            foreach ($slides as $index => $slide) {
+                echo '<div class="slide' . ($index === 0 ? ' active' : '') . '">';
+                echo '<img src="' . $slide['img'] . '" alt="' . $slide['alt'] . '">';
+                echo '<div class="info">';
+                if (isset($slide['title'])) {
+                    echo '<h2>' . $slide['title'] . '</h2>';
+                }
+                if (isset($slide['desc'])) {
+                    echo '<p>' . $slide['desc'] . '</p>';
+                }
+                if (isset($slide['link'])) {
+                    echo '<a href="' . $slide['link'] . '" style="color:white; margin-left: 10px;">EN SAVOIR PLUS</a>';
+                }
+                echo '</div></div>';
             }
-            echo '</div></div>';
+        }
+        // Cas 2 : Slides pour un lieu
+        elseif (isset($lieu['images']) && is_array($lieu['images'])) {
+            foreach ($lieu['images'] as $index => $img) {
+                echo '<div class="slide' . ($index === 0 ? ' active' : '') . '">';
+                echo '<img src="' . $img . '" alt="' . $lieu['label'] . '">';
+                echo '<div class="info">';
+                if (isset($lieu['alt'][$index])) {
+                    echo '<h2>' . $lieu['alt'][$index] . '</h2>';
+                }
+                if (isset($lieu['description'][$index])) {
+                    echo '<p>' . $lieu['description'][$index] . '</p>';
+                }
+                echo '</div></div>';
+            }
         }
         ?>
+
+        <!-- Navigation dots -->
         <div class="navigation">
-            <?php foreach ($slides as $index => $_): ?>
-                <div class="btn<?= $index === 0 ? ' active' : '' ?>"></div>
-            <?php endforeach; ?>
+            <?php
+            $count = isset($slides[0]) ? count($slides) : (isset($lieu['images']) ? count($lieu['images']) : 0);
+            for ($i = 0; $i < $count; $i++) {
+                echo '<div class="btn' . ($i === 0 ? ' active' : '') . '"></div>';
+            }
+            ?>
         </div>
     </div>
 </div>

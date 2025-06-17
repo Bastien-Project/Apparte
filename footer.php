@@ -1,18 +1,18 @@
 </body>
 <footer id="footer">
     <div class="content-footer">
-        <div class="bloc footer-contact">
+        <div class="footer-contact">
             <h2>Nous contacter</h2>
             <h3>Par téléphone</h3>
-            <p>04 67 00 00 00</p>
-            <p>06 00 00 00 00</p>
+            <p><a href="tel:0467000000">04 67 00 00 00</a></p>
+            <p><a href="tel:0600000000">06 00 00 00 00</a></p>
             <h3>Par email</h3>
             <a href="mailto: mail@mail.com">mail@mail.com</a>
             <h3>Par courrier</h3>
             <p>0 Rue de l'Avenue, 34000 Montpellier, France</p>
         </div>
 
-        <div class="bloc footer-medias">
+        <div class="footer-medias">
             <h2>Nos Réseaux</h2>
             <ul class="media-list">
                 <li>
