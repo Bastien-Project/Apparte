@@ -1,0 +1,276 @@
+.reverse {
+    transform: scaleX(-1);
+}
+
+.texte {
+    margin-left: 100px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+/* nav bar */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+/* SIDEBAR */
+/* Ajoute flou quand sidebar ouverte */
+body.blur .main-content {
+    filter: blur(3  px);
+    transition: filter 0.3s ease;
+    margin-left: 170px;
+}
+
+.main-content {
+    margin-left: 50px;
+}
+/* FIN nav bar */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    padding: 15px;
+    background: #FFF;
+    z-index: 10;
+}
+
+.sidebar.close {
+    width: 50px;
+}
+
+.sidebar li {
+    height: 50px;
+    display: flex;
+}
+
+.sidebar header .image {
+    min-width: 60px;
+    border-radius: 6px;
+}
+
+.sidebar .text {
+    font-size: 17px;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar header {
+    position: relative;
+}
+
+header .image-text .name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+header .image-text .profession {
+    font-size: 11px;
+    margin-top: -1px;
+    display: block;
+}
+
+.sidebar header .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar header .image img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    background-color: #1D6982;
+    color: #FFF;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.sidebar.close .toggle {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar .menu-bar {
+    margin-top: 40px;
+}
+
+.sidebar .menu-bar ul {
+    padding: 0;
+    margin: 0;
+    width: -webkit-fill-available;
+}
+
+.sidebar li a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: #000;
+}
+
+.sidebar li a:hover {
+    color: #1D6982;
+}
+
+/* FIN SIDEBAR */
+
+h1 {
+    font-size: 10vmin;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* FOOTER */
+footer {
+    background: #1D6982;
+}
+
+.content-footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-contact h3,
+.footer-services h3,
+.footer-schedule h3,
+.footer-medias h3 {
+    margin-bottom: 5px;
+}
+
+.footer-contact p {
+    margin: 0;
+}
+
+.media-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.media-list li {
+    margin-bottom: 5px;
+}
+
+.media-list a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0 5px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* FIN FOOTER */
+
+/* SLIDER */
+.div-slider {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1D212B;
+}
+
+.img-slider {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 10px;
+    background: #1D212B;
+}
+
+.img-slider .slide {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.img-slider .slide.active {
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+    transition-property: clip-path;
+}
+
+.img-slider .slide img {
+    z-index: 1;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.img-slider .slide .info {
+    position: absolute;
+    top: 0;
+    padding: 15px 30px;
+}
+
+.img-slider .slide .info h2 {
+    color: #fff;
+    font-size: 45px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.img-slider .slide .info p {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.img-slider .navigation {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-slider .navigation .btn {
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.img-slider .navigation .btn.active {
+    background: #1D6982;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/*FIN SLIDER */

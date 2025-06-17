@@ -1,11 +1,34 @@
 <?php
-require "head.php";
+require "header.php";
 ?>
 
 <body>
 
     <?php
     require "navbar.php";
+            $slides = [
+            [
+                'img' => 'images/grau-du-roi.jpg',
+                'alt' => 'Grau du Roi',
+                'title' => 'Grau du Roi',
+                'desc' => 'Découvrez le Grau du Roi, une station balnéaire familiale et conviviale.',
+                'link' => './grau-du-roi.php'
+            ],
+            [
+                'img' => 'images/meribel.jpg',
+                'alt' => 'Méribel',
+                'title' => 'Méribel',
+                'desc' => 'Découvrez Méribel, une station de ski familiale au cœur des Alpes.',
+                'link' => './meribel.php'
+            ],
+            [
+                'img' => 'images/montpellier.jpg',
+                'alt' => 'Montpellier',
+                'title' => 'Montpellier',
+                'desc' => 'Découvrez Montpellier, une ville dynamique et ensoleillée du sud de la France.',
+                'link' => './montpellier.php'
+            ]
+        ];
     require "slider.php";
     ?>
 
