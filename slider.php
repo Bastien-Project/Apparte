@@ -1,4 +1,9 @@
 <div class="div-slider">
+    <?php if (isset($lieu['images'])) { ?>
+        <div class="lieu-detail-top">
+            <h2><?php echo $lieu['label']; ?></h2>
+        </div>
+    <?php } ?>
     <div class="img-slider">
         <?php
         // Cas 1 : Slides générales (avec 'img', 'title', etc.)
@@ -32,12 +37,13 @@
                 if (isset($lieu['description'][$index])) {
                     echo '<p>' . $lieu['description'][$index] . '</p>';
                 }
-                echo '</div></div>';
+                echo '</div>';
+
+                echo '</div>';
             }
         }
         ?>
 
-        <!-- Navigation dots -->
         <div class="navigation">
             <?php
             $count = isset($slides[0]) ? count($slides) : (isset($lieu['images']) ? count($lieu['images']) : 0);
@@ -47,4 +53,9 @@
             ?>
         </div>
     </div>
+    <?php if (isset($lieu['images'])) { ?>
+        <div class="lieu-detail">
+            <a href="chambre.php" class="btn">← Retour à la sélection</a>
+        </div>
+    <?php } ?>
 </div>

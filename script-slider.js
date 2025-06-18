@@ -1,14 +1,18 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll('.slide');
-    const btns = document.querySelectorAll('.btn');
+    const btns = document.querySelectorAll('.navigation .btn');
     let currentIndex = 0;
     let timer;
+
+    // Si aucun slide, on ne fait rien
+    if (slides.length === 0 || btns.length === 0) return;
 
     function setActiveSlide(index) {
         slides.forEach((slide, i) => {
             slide.classList.toggle('active', i === index);
-            btns[i].classList.toggle('active', i === index);
+            if (btns[i]) {
+                btns[i].classList.toggle('active', i === index);
+            }
         });
         currentIndex = index;
     }
@@ -34,5 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         startAutoplay();
     }
 
+    setActiveSlide(0);
     startAutoplay();
 });

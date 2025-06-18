@@ -152,6 +152,10 @@ body.blur .main-content {
     margin: 0;
 }
 
+.chambre p {
+    margin-bottom: 20px;
+}
+
 /* SLIDER */
 .div-slider {
     margin: 0px;
@@ -160,9 +164,18 @@ body.blur .main-content {
     font-family: "Poppins", sans-serif;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #000;
+    color: #FFF;
+}
+
+.lieu-detail-top h2 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 800;
+    margin : 0;
 }
 
 .img-slider {
@@ -203,6 +216,7 @@ body.blur .main-content {
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
+    text-align: left;
 }
 
 .img-slider .slide .info p {
@@ -218,13 +232,13 @@ body.blur .main-content {
     z-index: 2;
     position: absolute;
     display: flex;
-    bottom: 30px;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .img-slider .navigation .btn {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(10, 150, 150, 0.8);
     width: 12px;
     height: 12px;
     margin: 10px;
@@ -235,6 +249,20 @@ body.blur .main-content {
 .img-slider .navigation .btn.active {
     background: #1D6982;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.lieu-detail {
+    width: 80vw;
+    margin: 10px;
+}
+
+a.btn {
+    background-color: #FFF;
+    border: 3px solid #1D6982;
+    border-radius: 5px;
+    color: #1D6982;
+    padding: 10px 20px;
+    text-decoration: none;
 }
 
 /*FIN SLIDER */
