@@ -1,6 +1,5 @@
 <?php
 require "header.php";
-require "navbar.php";
 
 // Définir les lieux
 $lieux = [
