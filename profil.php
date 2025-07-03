@@ -61,4 +61,22 @@ if (isset($_POST['update'])) {
     </div>
 </section>
 
+<?php
+// Section pour supprimer le compte
+if (isset($_POST['confirm_delete'])) {
+    $stmt = $pdo->prepare("DELETE FROM client WHERE id = ?");
+    $stmt->execute([$_SESSION['user_id']]);
+    session_destroy();
+    header("Location: index.php");
+    exit;
+}
+?>
+<section id="delete-account">
+    <h2>Supprimer mon compte</h2>
+    <p>Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.</p>
+    <form action="#" method="post">
+        <button type="submit" name="confirm_delete">Supprimer mon compte</button>
+    </form>
+</section>
+
 <?php include("footer.php") ?>
